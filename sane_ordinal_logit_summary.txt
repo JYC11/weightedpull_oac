@@ -1,0 +1,29 @@
+Call:
+polr(formula = oac_ability_rank ~ ., data = sane_ordinal, Hess = TRUE)
+
+Coefficients:
+                       Value Std. Error t value
+height              -0.01517   0.009202 -1.6489
+weight              -0.02264   0.008465 -2.6743
+`orm_as_%`           0.06493   0.004066 15.9661
+band                 0.15733   0.139564  1.1273
+`climbers-approach` -0.24618   0.193559 -1.2719
+climbing             1.91316   0.542020  3.5297
+eccentrics           0.70448   0.131195  5.3697
+grip                 1.11629   1.153824  0.9675
+`high-volume`       -0.52809   0.896789 -0.5889
+isometrics           1.46534   0.701403  2.0892
+`mixed-grip/mantle`  0.13377   0.168954  0.7918
+partials             0.91821   0.258007  3.5589
+pulley               0.51385   0.182720  2.8122
+`rope-climbs`        0.07239   0.329441  0.2197
+`weighted-pulls`     0.26082   0.128063  2.0367
+
+Intercepts:
+                      Value   Std. Error t value
+zero|beginner         -0.8068  1.4379    -0.5611
+beginner|intermediate  0.6591  1.4391     0.4580
+intermediate|advanced  1.7496  1.4400     1.2150
+
+Residual Deviance: 2145.085 
+AIC: 2181.085 
