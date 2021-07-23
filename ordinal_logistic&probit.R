@@ -7,10 +7,15 @@ insane_ordinal_tt <- read_excel("insane_ordinal_final_tt.xlsx")
 sane_ordinal <- read_excel("sane_ordinal_final.xlsx")
 sane_ordinal_tt <- read_excel("sane_ordinal_final_tt.xlsx")
 
+sane_ordinal_three_only <- read_excel("sane_ordinal_final (three vars only).xlsx")
+
 insane_ordinal$oac_ability_rank = factor(insane_ordinal$oac_ability_rank,levels=c("zero","beginner","intermediate","advanced"),ordered=TRUE)
 insane_ordinal_tt$oac_ability_rank = factor(insane_ordinal_tt$oac_ability_rank,levels=c("zero","beginner","intermediate","advanced"),ordered=TRUE)
 sane_ordinal$oac_ability_rank = factor(sane_ordinal$oac_ability_rank,levels=c("zero","beginner","intermediate","advanced"),ordered=TRUE)
 sane_ordinal_tt$oac_ability_rank = factor(sane_ordinal_tt$oac_ability_rank,levels=c("zero","beginner","intermediate","advanced"),ordered=TRUE)
+
+sane_ordinal_three_only$oac_ability_rank = factor(sane_ordinal_three_only$oac_ability_rank,levels=c("zero","beginner","intermediate","advanced"),ordered=TRUE)
+
 
 modelprobit1 <- polr(formula=oac_ability_rank ~ .,data=insane_ordinal,Hess=TRUE,method="probit")
 mp1s <- summary(modelprobit1)
@@ -44,3 +49,7 @@ capture.output(ml3s, file = "sane_ordinal_logit_summary.txt")
 modellogit4 <- polr(oac_ability_rank ~ .,data=sane_ordinal_tt,Hess=TRUE)
 ml4s <- summary(modellogit4)
 capture.output(ml4s, file = "sane_ordinal_tt_logit_summary.txt")
+
+modellogit5 <- polr(oac_ability_rank ~ .,data=sane_ordinal_three_only,Hess=TRUE)
+ml5s <- summary(modellogit5)
+capture.output(ml5s, file = "sane_ordinal_logit_3_vars_only_summary.txt")

@@ -1,0 +1,18 @@
+Call:
+polr(formula = oac_ability_rank ~ ., data = sane_ordinal_three_only, 
+    Hess = TRUE)
+
+Coefficients:
+              Value Std. Error t value
+height     -0.01552   0.009040  -1.717
+weight     -0.02261   0.008274  -2.732
+`orm_as_%`  0.06781   0.004023  16.858
+
+Intercepts:
+                      Value   Std. Error t value
+zero|beginner         -1.3117  1.4138    -0.9278
+beginner|intermediate  0.0449  1.4141     0.0318
+intermediate|advanced  1.0748  1.4147     0.7597
+
+Residual Deviance: 2236.694 
+AIC: 2248.694 
